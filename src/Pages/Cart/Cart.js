@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { deleteFromCart, addToCart } from "../../rtk/Slices/cart-slice";
+import { deleteFromCart } from "../../rtk/Slices/cart-slice";
 import { useSelector, useDispatch } from "react-redux";
 
 import "./cart.css";
@@ -38,7 +37,7 @@ export default function Cart(){
                     <tr key={product.id}>
                         <td>{product.title}</td>
                         <td>{totalPrice} $</td>
-                        <td><img src={product.mainImg}></img></td>
+                        <td><img src={product.mainImg} alt="test"></img></td>
                         <td>{product.quantity}</td>
                         <td><button onClick={() => dispatch(deleteFromCart(product))}>Delete</button></td>
                     </tr>))

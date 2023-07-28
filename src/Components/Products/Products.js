@@ -12,7 +12,7 @@ export default function Products(props){
         .then((res) => res.json())
         .then((data) => setProducts(data[props.api]));
             
-    }, []);
+    }, [props.api]);
 
 
     return(
@@ -20,7 +20,7 @@ export default function Products(props){
             {products.map((product, i) => (
                 <div key={i} className="product">
                     <div className="img">
-                        <img src={product.mainImg}></img>
+                        <img src={product.mainImg} alt="t"></img>
                     </div>
                     <div className="text">
                         <h2>{product.title}</h2>

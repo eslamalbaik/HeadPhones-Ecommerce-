@@ -15,7 +15,7 @@ export default function Product(props){
         fetch(`https://astalaat02.github.io/api/db.json`)
             .then((res) => res.json())
             .then((data) => setProducts(data[props.api][props.id]))
-    }, []);
+    }, [props.api, props.id]);
 
     
     const cart = useSelector((state) => state.cart);
@@ -32,7 +32,7 @@ export default function Product(props){
             <Link className="back" to="/">Go Back</Link>
         <div className="head">
             <div className="image">
-                <img src={products.mainImg}></img>
+                <img src={products.mainImg} alt="products"></img>
             </div>
             <div className="text">
                 <h2>{products.title}</h2>
@@ -80,11 +80,11 @@ export default function Product(props){
             </div>
             <div className="images">
                 <div className="left">
-                    <img src={products.imgTwo}></img>
-                    <img src={products.imgThree}></img>
+                    <img src={products.imgTwo} alt="test"></img>
+                    <img src={products.imgThree} alt="test"></img>
                 </div>
                 <div className="right">
-                    <img src={products.imgFour}></img>
+                    <img src={products.imgFour} alt="test"></img>
                 </div>
             </div>
             <ProductsBar />

@@ -198,7 +198,7 @@ export default function Checkout(){
                 {cart.map((product) => (
                     <>
                     <div className="products">
-                        <img src={product.mainImg}></img>
+                        <img src={product.mainImg} alt="test"></img>
                         <div className="text">
                             <p>
                                 {product.title}
@@ -224,7 +224,7 @@ export default function Checkout(){
                     </div>
             </div>
         </div>
-        <div className={`done${done == true ? " active" : ""}`}>
+        <div className={`done${done === true ? " active" : ""}`}>
                             <div className="head">
                             <i className="fa-solid fa-circle-check"></i>
                                 <p>Thank You <br/>
@@ -238,7 +238,7 @@ export default function Checkout(){
                     cart.map((product) => (
                         <>
                                 <div className="info">
-                                    <img src={product.mainImg}></img>
+                                    <img src={product.mainImg} alt="twst"></img>
                                     <span>
                                         {product.title}
                                         <p>
